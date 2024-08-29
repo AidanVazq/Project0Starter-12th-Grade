@@ -8,20 +8,21 @@ def makeAguess(UserGuess):
 
 
   # TASK C:Define a variable 'hint' that holds an empty string
- hint = ""
+  hint = ""
 
   # TASK D: Build a loop that loops from 0 to the length of word
-for i in range(len(word)):
+  for i in range(len(word)):
 
-    # TASK E: Check if the current letter of guess matches the current letter of word. If so add the letter "G" to the hint
+     # TASK E: Check if the current letter of guess matches the current letter of word. If so add the letter "G" to the hint
     if UserGuess[i] == word[i]:
-:    hint  += "G"
-    # TASK F: If the previous condition is fales, check if the current letter of guess is in word at all. If so add the letter "Y" to the hint
-    elif userGuess[i] in word:
-    hint += "Y"
+      hint  += "G"
+     # TASK F: If the previous condition is fales, check if the current letter of guess is in word at all. If so add the letter "Y" to the hint
+    elif UserGuess[i] in word:
+        hint += "Y"
     # TASK G: If the previous two conditions are false, add the symbol "-" to the hint
-    hint = "-"
-  # TASK H: Return hint
+    else:
+      hint += "-"
+      # TASK H: Return hint
   return hint
 
   # print(makeAGuess("SAINT"))
@@ -39,8 +40,13 @@ for i in range(6):
   # TASK L: Print hint
   print(hint)
   # TASK M: Check if hint = "GGGGG". If so the user has won. Print a win message and break the loop
-  if hint = "GGGGG":
+  if hint == "GGGGG":
     print("you Win")
     break
+
+if hint != "GGGGG":
+  print("YOU LOSE!!!!!!!!!!!!")
+
+
 
 # TASK N: After the loop has finished, meaning the user has run out of guesses, check if hint != "GGGGG". If so, the user has lost. Print a lose message. 
